@@ -74,7 +74,7 @@ async def change_name_auto():
         except Exception as e:
             print('%s: %s' % (type(e), e))
 
-        await asyncio.sleep(60)
+        await asyncio.sleep(1)
 
 
 # main function
