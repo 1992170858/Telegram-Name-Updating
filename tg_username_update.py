@@ -18,8 +18,7 @@ from emoji import emojize
 
 four_leaf_clover = emojize(":four_leaf_clover:", use_aliases=True)
 basketball=emojize(":basketball:", use_aliases=True)
-dizzy = emojize(":dizzy:", use_aliases=True)
-cake = emojize(":cake:", use_aliases=True)
+
 all_time_emoji_name = ["clock12", "clock1230", "clock1", "clock130", "clock2", "clock230", "clock3", "clock330", "clock4", "clock430", "clock5", "clock530", "clock6", "clock630", "clock7", "clock730", "clock8", "clock830", "clock9", "clock930", "clock10", "clock1030", "clock11", "clock1130"]
 time_emoji_symb = [emojize(":%s:" %s, use_aliases=True) for s in all_time_emoji_name]
 
@@ -48,7 +47,7 @@ async def change_name_auto():
         try:
             time_cur = strftime("%H:%M:%S:%p:%a", time.localtime())
             hour, minu, seco, p, abbwn = time_cur.split(':')
-            if seco=='00' or seco=='30':
+            if (int(minu))%5==0:
                 shift = 0
                 mult = 1
                 if int(minu)>30: shift=1
@@ -57,22 +56,12 @@ async def change_name_auto():
                 hsym = time_emoji_symb[(int(hour)%12)*2+shift]
                 # await client1.send_message('me', hsym)
                 for_fun = random.random() 
-#                 if for_fun < 0.10:
-#                     last_name = '%s时%s分 %s' % (hour, minu, hsym)
-#                 elif for_fun < 0.30:
-#                     last_name = '%s:%s %s %s %s' % (hour, minu, p, abbwn, hsym)
-#                 elif for_fun < 0.60:
-#                     last_name = '%s:%s %s UTC+8 %s' % (hour, minu, p, hsym)
-#                 elif for_fun < 0.90:
-#                     last_name = '%s' % dizzy
-#                 else:
-#                     last_name = '%s' % cake
                 if for_fun < 0.33:
                     last_name = '%s时%s分 %s' % (hour, minu, four_leaf_clover)
                 elif for_fun < 0.67:
-                    last_name = '%s:%s %s %s %s' % (hour, minu, p, abbwn, hsym)
+                    last_name = '%s:%s %s %s %s' % (hour, minu, p, abbwn, four_leaf_clover)
                 else:
-                    last_name = '%s:%s %s UTC+8 %s' % (hour, minu, p, basketball)
+                    last_name = '%s:%s %s UTC+8 %s' % (hour, minu, p, four_leaf_clover)
                     
                 await client1(UpdateProfileRequest(last_name=last_name))
                 logger.info('Updated -> %s' % last_name)
@@ -85,7 +74,7 @@ async def change_name_auto():
         except Exception as e:
             print('%s: %s' % (type(e), e))
 
-        await asyncio.sleep(1)
+        await asyncio.sleep(60)
 
 
 # main function
