@@ -16,7 +16,8 @@ from telethon import TelegramClient
 from telethon.tl.functions.account import UpdateProfileRequest
 from emoji import emojize
 
-
+four_leaf_clover = emojize(":four_leaf_clover:", use_aliases=True)
+basketball=emojize(":basketball:", use_aliases=True)
 dizzy = emojize(":dizzy:", use_aliases=True)
 cake = emojize(":cake:", use_aliases=True)
 all_time_emoji_name = ["clock12", "clock1230", "clock1", "clock130", "clock2", "clock230", "clock3", "clock330", "clock4", "clock430", "clock5", "clock530", "clock6", "clock630", "clock7", "clock730", "clock8", "clock830", "clock9", "clock930", "clock10", "clock1030", "clock11", "clock1130"]
@@ -55,7 +56,7 @@ async def change_name_auto():
                 # hour symbols
                 hsym = time_emoji_symb[(int(hour)%12)*2+shift]
                 # await client1.send_message('me', hsym)
-#                 for_fun = random.random() 
+                for_fun = random.random() 
 #                 if for_fun < 0.10:
 #                     last_name = '%s时%s分 %s' % (hour, minu, hsym)
 #                 elif for_fun < 0.30:
@@ -66,8 +67,13 @@ async def change_name_auto():
 #                     last_name = '%s' % dizzy
 #                 else:
 #                     last_name = '%s' % cake
-                last_name = '%s时%s分 %s' % (hour, minu, hsym)
-        
+                if for_fun < 0.33:
+                    last_name = '%s时%s分 %s' % (hour, minu, four_leaf_clover)
+                elif for_fun < 0.67:
+                    last_name = '%s:%s %s %s %s' % (hour, minu, p, abbwn, hsym)
+                else:
+                    llast_name = '%s:%s %s UTC+8 %s' % (hour, minu, p, basketball)
+                    
                 await client1(UpdateProfileRequest(last_name=last_name))
                 logger.info('Updated -> %s' % last_name)
         
