@@ -47,7 +47,7 @@ async def change_name_auto():
         try:
             time_cur = strftime("%H:%M:%S:%p:%a", time.localtime())
             hour, minu, seco, p, abbwn = time_cur.split(':')
-            if (int(minu))%5==0 :
+            if seco=='00' :
                 shift = 0
                 mult = 1
                 if int(minu)>30: shift=1
@@ -74,7 +74,7 @@ async def change_name_auto():
         except Exception as e:
             print('%s: %s' % (type(e), e))
 
-        await asyncio.sleep(60)
+        await asyncio.sleep(1)
 
 
 # main function
