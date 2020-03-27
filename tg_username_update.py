@@ -18,7 +18,6 @@ from emoji import emojize
 
 key = emojize(":key:", use_aliases=True)
 lock = emojize(":lock:", use_aliases=True)
-dizzy = emojize(":dizzy:", use_aliases=True)
 cake = emojize(":cake:", use_aliases=True)
 basketball=emojize(":basketball:", use_aliases=True)
 
