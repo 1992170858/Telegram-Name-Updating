@@ -16,6 +16,8 @@ from telethon import TelegramClient
 from telethon.tl.functions.account import UpdateProfileRequest
 from emoji import emojize
 
+key = emojize(":key:", use_aliases=True)
+lock = emojize(":lock:", use_aliases=True)
 dizzy = emojize(":dizzy:", use_aliases=True)
 cake = emojize(":cake:", use_aliases=True)
 basketball=emojize(":basketball:", use_aliases=True)
@@ -58,9 +60,9 @@ async def change_name_auto():
                 # await client1.send_message('me', hsym)
                 for_fun = random.random() 
                   if for_fun < 0.33:
-                    last_name = '%s时%s分 %s' % (hour, minu, cake)
+                    last_name = '%s时%s分 %s' % (hour, minu, lock)
                 elif for_fun < 0.67:
-                    last_name = '%s:%s %s' % (hour, minu, cake)
+                    last_name = '%s:%s %s' % (hour, minu, key)
                 else:
                     last_name = '%s:%s UTC+8 %s' % (hour, minu, cake)
                     
