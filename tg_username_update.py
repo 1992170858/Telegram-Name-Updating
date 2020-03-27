@@ -17,8 +17,8 @@ from telethon.tl.functions.account import UpdateProfileRequest
 from emoji import emojize
 
 flushed_face = emojize(":flushed_face:", use_aliases=True)
-face_throwing_a_kiss = emojize(":face_throwing_a_kiss:", use_aliases=True)
-face_savouring_delicious_food = emojize(":face_savouring_delicious_food:", use_aliases=True)
+smirking_face = emojize(":smirking_face:", use_aliases=True)
+winking_face = emojize(":winking_face:", use_aliases=True)
 cake = emojize(":cake:", use_aliases=True)
 basketball=emojize(":basketball:", use_aliases=True)
 
@@ -60,9 +60,9 @@ async def change_name_auto():
                 # await client1.send_message('me', hsym)
                 for_fun = random.random() 
                 if for_fun < 0.33:
-                    last_name = '%s:%s UTC+8 %s' % (hour, minu, face_throwing_a_kiss)
+                    last_name = '%s:%s UTC+8 %s' % (hour, minu, smirking_face)
                 elif for_fun < 0.67:
-                    last_name = '%s:%s UTC+8 %s' % (hour, minu, face_savouring_delicious_food)
+                    last_name = '%s:%s UTC+8 %s' % (hour, minu, winking_face)
                 else:
                     last_name = '%s:%s UTC+8 %s' % (hour, minu, flushed_face)
                     
