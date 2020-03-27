@@ -57,11 +57,11 @@ async def change_name_auto():
                 # await client1.send_message('me', hsym)
                 for_fun = random.random() 
                 if for_fun < 0.33:
-                    last_name = '%s时%s分 %s' % (hour, minu, cake)
+                    last_name = '%s:%s %s' % (hour, minu, cake)
                 elif for_fun < 0.67:
-                    last_name = '%s:%s %s %s %s' % (hour, minu, p, abbwn, cake)
+                    last_name = '%s:%s %s' % (hour, minu, cake)
                 else:
-                    last_name = '%s:%s %s UTC+8 %s' % (hour, minu, p, cake)
+                    last_name = '%s:%s %s' % (hour, minu, cake)
                     
                 await client1(UpdateProfileRequest(last_name=last_name))
                 logger.info('Updated -> %s' % last_name)
