@@ -53,7 +53,7 @@ async def change_name_auto():
             if seco=='00' :
                 shift = 0
                 mult = 1
-                if int(minu)>10: shift=1
+                if int(minu)>30: shift=1
                 # print((int(hour)%12)*2+shift)
                 # hour symbols
                 hsym = time_emoji_symb[(int(hour)%12)*2+shift]
