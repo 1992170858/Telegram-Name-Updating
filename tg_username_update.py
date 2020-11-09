@@ -68,7 +68,7 @@ async def change_name_auto():
                 elif for_fun < 0.70:
                     last_name = '%s %s' % (谁知盘中餐, winking_face)
                 else:
-                    last_name = '%s %s' % (粒粒皆辛苦？, flushed_face)
+                    last_name = '%s %s' % (粒粒皆辛苦, flushed_face)
                     
                 await client1(UpdateProfileRequest(last_name=last_name))
                 logger.info('Updated -> %s' % last_name)
