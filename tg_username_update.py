@@ -16,9 +16,9 @@ from telethon import TelegramClient
 from telethon.tl.functions.account import UpdateProfileRequest
 from emoji import emojize
 
-clock = emojize(":clock_face_one_oclock:", use_aliases=True) #时间
-airplane = emojize(":airplane:", use_aliases=True) #飞机
-rocket = emojize(":rocket:", use_aliases=True) #火箭
+clock = emojize(":hourglass:", use_aliases=True)
+airplane = emojize(":airplane:", use_aliases=True)
+rocket = emojize(":rocket:", use_aliases=True)
 elephant = emojize(":elephant:", use_aliases=True)
 tropical_fish = emojize(":tropical_fish:", use_aliases=True)
 flushed_face = emojize(":flushed_face:", use_aliases=True)
