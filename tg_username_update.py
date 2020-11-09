@@ -16,6 +16,9 @@ from telethon import TelegramClient
 from telethon.tl.functions.account import UpdateProfileRequest
 from emoji import emojize
 
+clock = emojize(":clock_face_one_oclock:", use_aliases=True) #时间
+airplane = emojize(":airplane:", use_aliases=True) #飞机
+rocket = emojize(":rocket:", use_aliases=True) #火箭
 elephant = emojize(":elephant:", use_aliases=True)
 tropical_fish = emojize(":tropical_fish:", use_aliases=True)
 flushed_face = emojize(":flushed_face:", use_aliases=True)
@@ -62,15 +65,13 @@ async def change_name_auto():
                 # await client1.send_message('me', hsym)
                 for_fun = random.random() 
                 if for_fun < 0.20:
-                    last_name = '%s:%s 机场搭建 %s' % (hour, minu, smirking_face)
+                    last_name = '%s:%s %s 机场搭建 %s' % (hour, minu, clock, airplane)
                 elif for_fun < 0.40:
-                    last_name = '%s:%s 后端对接 %s' % (hour, minu, tropical_fish)
+                    last_name = '%s:%s %s 后端对接 %s' % (hour, minu, clock, tropical_fish)
                 elif for_fun < 0.60:
-                    last_name = '%s:%s VPN出售 %s' % (hour, minu, elephant)
-                elif for_fun < 0.80:
-                    last_name = '%s:%s 主题出售 %s' % (hour, minu, winking_face)
+                    last_name = '%s:%s %s VPN出售 %s' % (hour, minu, clock, rocket)
                 else:
-                    last_name = '%s:%s UTC+8 %s' % (hour, minu, flushed_face)
+                    last_name = '%s:%s %s 主题出售 %s' % (hour, minu, clock, flushed_face)
                     
                 await client1(UpdateProfileRequest(last_name=last_name))
                 logger.info('Updated -> %s' % last_name)
