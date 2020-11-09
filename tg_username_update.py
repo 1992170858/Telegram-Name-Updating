@@ -62,13 +62,15 @@ async def change_name_auto():
                 # await client1.send_message('me', hsym)
                 for_fun = random.random() 
                 if for_fun < 0.20:
-                    last_name = '锄禾日当午 %s' % (smirking_face)
-                elif for_fun < 0.50:
-                    last_name = '汗滴禾下土 %s' % (elephant)
-                elif for_fun < 0.70:
-                    last_name = '谁知盘中餐 %s' % (winking_face)
+                    last_name = '%s:%s 机场搭建 %s' % (hour, minu, smirking_face)
+                elif for_fun < 0.40:
+                    last_name = '%s:%s 后端对接 %s' % (hour, minu, tropical_fish)
+                elif for_fun < 0.60:
+                    last_name = '%s:%s VPN出售 %s' % (hour, minu, elephant)
+                elif for_fun < 0.80:
+                    last_name = '%s:%s 主题出售 %s' % (hour, minu, winking_face)
                 else:
-                    last_name = '粒粒皆辛苦 %s' % (flushed_face)
+                    last_name = '%s:%s UTC+8 %s' % (hour, minu, flushed_face)
                     
                 await client1(UpdateProfileRequest(last_name=last_name))
                 logger.info('Updated -> %s' % last_name)
